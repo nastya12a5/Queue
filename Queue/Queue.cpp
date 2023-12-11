@@ -8,6 +8,7 @@ int main()
 	qu.Push(1);
 	qu.Push(2);
 	qu.Push(3);
+	qu.printQueue();
 	cout << "Front " << qu.Front() << endl;
 	cout << "Back " << qu.Back() << endl;
 	int a=qu.Pop();

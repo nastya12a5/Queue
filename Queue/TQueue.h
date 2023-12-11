@@ -79,7 +79,7 @@ public:
 	void Push(const T& el)
 	{
 		finish++;
-		if (full()) cout << "Queue is full" << endl;
+		if (full()) throw "Queue is full";
 		else
 		{
 			if (finish == size) finish = 0;
@@ -90,20 +90,23 @@ public:
 	}
 	T Pop()
 	{
-		if (empty()) cout << "Queue is empty" << endl;
-		else
+		if (this->empty() == true)
 		{
+			throw("Queue is empty");
+		}
+		
+		
 			T el = pMem[start];
 			start++;
 			if (start == size) start = 0;
 			count--;
 			return el;
-		}
+		
 	}
 	T Front()
 	{
 		if (empty()) {
-			cout << "Queue is empty" << endl;
+			throw "Queue is empty";
 			return -1;
 		}
 		return pMem[start];
@@ -111,7 +114,7 @@ public:
 	T Back()
 	{
 		if (full()) {
-			cout << "Queue is empty" << endl;
+			throw "Queue is empty";
 			return -1;
 		}
 		return pMem[finish];
